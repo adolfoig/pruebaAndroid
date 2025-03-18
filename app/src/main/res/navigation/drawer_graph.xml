@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/trabajosRealizados">
+
+    <fragment
+        android:id="@+id/registrarProductos"
+        android:name="com.example.proyectoglobal.ui.clases.subclases.producto.RegistrarProductosFragment"
+        android:label="RegistrarProductosFragment"
+        tools:layout="@layout/fragment_registrar_productos" />
+
+
+    <fragment
+        android:id="@+id/trabajosRealizados"
+        android:name="com.example.proyectoglobal.ui.clases.trabajosRealizados.TrabajosRealizadosFragment"
+        android:label="@string/menu_trabajosRealizados"
+        tools:layout="@layout/fragment_trabajos_realizados" >
+        <action
+            android:id="@+id/action_trabajosRealizados_to_trabajoDetalleFragment"
+            app:destination="@id/trabajoDetalle" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/insertarTrabajo"
+        android:name="com.example.proyectoglobal.ui.clases.trabajosRealizados.InsertarTrabajoFragment"
+        android:label="Insertar Trabajo"
+        tools:layout="@layout/fragment_insertar_trabajo"/>
+
+    <fragment
+        android:id="@+id/trabajoDetalle"
+        android:name="com.example.proyectoglobal.ui.clases.trabajosRealizados.TrabajoDetalleFragment"
+        android:label="fragment_trabajo_detalle"
+        tools:layout="@layout/fragment_trabajo_detalle" />
+
+
+    <fragment
+        android:id="@+id/presupuestos"
+        android:name="com.example.proyectoglobal.ui.clases.presupuesto.PresupuestosFragment"
+        android:label="@string/menu_presupuestos"
+        tools:layout="@layout/fragment_presupuesto" >
+        <action
+            android:id="@+id/action_presupuestos_to_rellenarPresupuesto"
+            app:destination="@id/rellenarPresupuesto" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rellenarPresupuesto"
+        android:name="com.example.proyectoglobal.ui.clases.presupuesto.RellenarPresupuestoFragment"
+        android:label="fragment_rellenar_presupuesto"
+        tools:layout="@layout/fragment_rellenar_presupuesto" >
+        <action
+            android:id="@+id/action_rellenarPresupuesto_to_presupuestoFinal"
+            app:destination="@id/presupuestoFinal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/presupuestoFinal"
+        android:name="com.example.proyectoglobal.ui.clases.presupuesto.PresupuestoFinalFragment"
+        android:label="fragment_presupuesto_final"
+        tools:layout="@layout/fragment_presupuesto_final" />
+
+</navigation>

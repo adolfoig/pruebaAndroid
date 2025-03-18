@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/registrarProductos"
+        android:title="Registrar Productos"
+        android:icon="@drawable/ic_menu_gallery" />
+    <item
+        android:id="@+id/insertarTrabajo"
+        android:title="Insertar Trabajo"
+        android:icon="@drawable/ic_menu_gallery" />
+    <item
+        android:id="@+id/trabajosRealizados"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="@string/menu_trabajosRealizados" />
+    <item
+        android:id="@+id/presupuestos"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/menu_presupuestos" />
+    <item
+        android:id="@+id/cerrarSesion"
+        android:icon="@drawable/sesion"
+        android:title="@string/menu_cerrarSesion" />
+</menu>

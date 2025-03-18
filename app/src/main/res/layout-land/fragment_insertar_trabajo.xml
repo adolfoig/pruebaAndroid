@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- EditText para el nombre del trabajo -->
+    <EditText
+        android:id="@+id/etNombreTrabajo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del trabajo"
+        android:inputType="text" />
+
+    <!-- ImageView para mostrar la imagen del trabajo -->
+    <ImageView
+        android:id="@+id/imgTrabajo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <!-- Botón para elegir una imagen -->
+    <Button
+        android:id="@+id/btnSeleccionarImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Imagen" />
+
+    <!-- Botón para guardar el trabajo -->
+    <Button
+        android:id="@+id/btnGuardarTrabajo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Trabajo" />
+
+    <!-- RecyclerView o algún componente para añadir productos relacionados -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

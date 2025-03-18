@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Presupuesto Final"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/txtNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nº: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Fecha -->
+        <TextView
+            android:id="@+id/txtFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nombre del Cliente -->
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Cliente: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Correo Electrónico -->
+        <TextView
+            android:id="@+id/txtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo Electrónico: "
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Descripción del Presupuesto -->
+        <TextView
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción:"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Sección Productos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Productos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="4dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- ID del Producto -->
+        <TextView
+            android:id="@+id/txtIdProducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID del Producto: "
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Cantidad y Precio Unitario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/txtCantidad"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Cantidad: "
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/txtPrecioUnitario"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Precio Unitario: "
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- Precio Total -->
+        <TextView
+            android:id="@+id/txtPrecioTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio Total: "
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"/>
+
+
+        <Button
+            android:id="@+id/btnPublicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Publicar" />
+    </LinearLayout>
+
+</ScrollView>
