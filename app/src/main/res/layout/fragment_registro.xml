@@ -50,7 +50,7 @@
             android:layout_height="55dp"
             android:background="@drawable/rounded_edittext_background"
             android:hint="Nombre de Usuario"
-            android:hintTextColor="@color/gris_claro"
+            app:hintTextColor="@color/gris_claro"
             android:inputType="textPersonName"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,7 +69,7 @@
             android:layout_height="55dp"
             android:background="@drawable/rounded_edittext_background"
             android:hint="Correo Electrónico"
-            android:hintTextColor="@color/gris_claro"
+            app:hintTextColor="@color/gris_claro"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +88,7 @@
             android:layout_height="55dp"
             android:background="@drawable/rounded_edittext_background"
             android:hint="Contraseña"
-            android:hintTextColor="@color/gris_claro"
+            app:hintTextColor="@color/gris_claro"
             android:inputType="textPassword"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +107,7 @@
             android:layout_height="55dp"
             android:background="@drawable/rounded_edittext_background"
             android:hint="Repetir Contraseña"
-            android:hintTextColor="@color/gris_claro"
+            app:hintTextColor="@color/gris_claro"
             android:inputType="textPassword"
             android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
