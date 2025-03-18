@@ -32,7 +32,7 @@ public class RegistroFragment extends Fragment {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
-    private EditText nameEditText, emailEditText, passwordEditText, confirmPasswordEditText, birthDateEditText;
+    private EditText nameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
     private Button registerButton, selectImageButton;
     private ImageView profileImageView;
     private FirebaseAuth mAuth;
@@ -56,7 +56,6 @@ public class RegistroFragment extends Fragment {
         emailEditText = view.findViewById(R.id.etEmailUsuario);
         passwordEditText = view.findViewById(R.id.etContraseñaUsuario);
         confirmPasswordEditText = view.findViewById(R.id.etConfirmarContraseñaUsuario);
-        birthDateEditText = view.findViewById(R.id.etFechaNacimientoUsuario);
         registerButton = view.findViewById(R.id.btnRegistrarUsuario);
         selectImageButton = view.findViewById(R.id.btnSubirImagenPerfil);
         profileImageView = view.findViewById(R.id.ivImagenPerfilUsuario);
@@ -96,10 +95,9 @@ public class RegistroFragment extends Fragment {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
         String confirmPassword = confirmPasswordEditText.getText().toString().trim();
-        String birthDate = birthDateEditText.getText().toString().trim();
 
         // Validación de campos vacíos
-        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword) || TextUtils.isEmpty(birthDate)) {
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
             Toast.makeText(getActivity(), "Completa todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -111,10 +109,6 @@ public class RegistroFragment extends Fragment {
         }
 
         // Validar la fecha de nacimiento (ejemplo simple: no mayor de 120 años)
-        if (!isValidDate(birthDate)) {
-            Toast.makeText(getActivity(), "Fecha de nacimiento inválida", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         // Verificar si las contraseñas coinciden
         if (!password.equals(confirmPassword)) {
@@ -160,12 +154,12 @@ public class RegistroFragment extends Fragment {
     private void saveUserData(FirebaseUser user, String profileImageUrl) {
         // Guardar los datos del usuario en Firestore
         Map<String, Object> userData = new HashMap<>();
-        userData.put("name", nameEditText.getText().toString().trim());
+        userData.put("nombre", nameEditText.getText().toString().trim());
         userData.put("email", emailEditText.getText().toString().trim());
-        userData.put("birthDate", birthDateEditText.getText().toString().trim());
+        userData.put("puntuacionGlobal", 0);
         userData.put("profileImageUrl", profileImageUrl);
 
-        firestore.collection("users").document(user.getUid())
+        firestore.collection("Usuarios").document(user.getUid())
                 .set(userData)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(getActivity(), "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show();
@@ -174,23 +168,5 @@ public class RegistroFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     Toast.makeText(getActivity(), "Error al guardar datos: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
-    }
-
-    private boolean isValidDate(String date) {
-        // Realizar una validación simple de la fecha (por ejemplo, asegurarse de que el formato sea válido)
-        // Aquí se puede mejorar con una validación más avanzada, pero por ahora, se hace una verificación simple.
-        try {
-            String[] parts = date.split("-");
-            if (parts.length == 3) {
-                int year = Integer.parseInt(parts[0]);
-                int month = Integer.parseInt(parts[1]);
-                int day = Integer.parseInt(parts[2]);
-                // Verificar si la fecha es razonable (por ejemplo, no mayor de 120 años)
-                return year >= 1900 && year <= 2025 && month >= 1 && month <= 12 && day >= 1 && day <= 31;
-            }
-        } catch (Exception e) {
-            return false;
-        }
-        return false;
     }
 }

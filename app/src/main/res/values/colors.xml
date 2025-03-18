@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primaryColor">#6200EE</color>
+    <color name="gris_medio_oscuro">#424242</color> <!-- Gris medio oscuro -->
+    <color name="azul">#2196F3</color> <!-- Azul -->
+    <color name="blanco_medio">#6B6868</color> <!-- Fondo medio blanco para los campos -->
+    <color name="gris_claro">#9E9E9E</color> <!-- Color gris claro para los hints -->
 </resources>
