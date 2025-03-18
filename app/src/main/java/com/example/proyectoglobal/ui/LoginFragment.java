@@ -49,7 +49,7 @@ public class LoginFragment extends Fragment {
         binding.loginButton.setOnClickListener(v -> loginUser());
 
         // Evento para abrir el fragmento de registro
-        binding.registerButton.setOnClickListener(v -> abrimosRegistroFragment());
+        binding.registerTextView.setOnClickListener(v -> abrimosRegistroFragment());
 
         return binding.getRoot(); // Retornamos la vista inflada
     }
